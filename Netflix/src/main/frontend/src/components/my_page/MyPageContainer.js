@@ -147,6 +147,8 @@ const MypageContainer = () => {
                                     <div className = "w-[80%] m2_user">
                                         {profiles && profiles.map((item,index)=>{
                                             sessionStorage.setItem('profile_id', item.profile_id)
+                                            sessionStorage.setItem('profile_name' , item.profile_name)
+                                            sessionStorage.setItem('img_path', item.img_path)
                                             return (
                                             <>
                                                 <div className="flex flex-wrap ml-[50px] w-[880px]" key={index}>
@@ -163,11 +165,11 @@ const MypageContainer = () => {
                                                     </button>
                                                 </div>
                                                 <div className="border-solid ml-[65px] mt-6 border-t-[1px] h-9 border-neutral-300"></div>
-                                                {index===0 &&  isShow1 ? <MyPageSlide_Sub profile_id={sessionStorage.getItem('profile_id')} />: ''}
-                                                {index===1 &&  isShow2 ? <MyPageSlide_Sub profile_id={sessionStorage.getItem('profile_id')} />: ''}
-                                                {index===2 &&  isShow3 ? <MyPageSlide_Sub profile_id={sessionStorage.getItem('profile_id')} />: ''}
-                                                {index===3 &&  isShow4 ? <MyPageSlide_Sub profile_id={sessionStorage.getItem('profile_id')} />: ''}
-                                                {index===4 &&  isShow5 ? <MyPageSlide_Sub profile_id={sessionStorage.getItem('profile_id')} />: ''}
+                                                {index===0 &&  isShow1 ? <MyPageSlide_Sub img_path={sessionStorage.getItem('img_path')} profile_name={sessionStorage.getItem('profile_name')} profile_id={sessionStorage.getItem('profile_id')} />: ''}
+                                                {index===1 &&  isShow2 ? <MyPageSlide_Sub img_path={sessionStorage.getItem('img_path')} profile_name={sessionStorage.getItem('profile_name')} profile_id={sessionStorage.getItem('profile_id')} />: ''}
+                                                {index===2 &&  isShow3 ? <MyPageSlide_Sub img_path={sessionStorage.getItem('img_path')} profile_name={sessionStorage.getItem('profile_name')} profile_id={sessionStorage.getItem('profile_id')} />: ''}
+                                                {index===3 &&  isShow4 ? <MyPageSlide_Sub img_path={sessionStorage.getItem('img_path')} profile_name={sessionStorage.getItem('profile_name')} profile_id={sessionStorage.getItem('profile_id')} />: ''}
+                                                {index===4 &&  isShow5 ? <MyPageSlide_Sub img_path={sessionStorage.getItem('img_path')} profile_name={sessionStorage.getItem('profile_name')} profile_id={sessionStorage.getItem('profile_id')} />: ''}
                                             </>
                                         )})}
                                     </div>

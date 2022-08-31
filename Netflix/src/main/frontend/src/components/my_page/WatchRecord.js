@@ -7,6 +7,8 @@ const WatchRecord = () => {
 
     const location = useLocation();
     const profile_id = location.state.profile_id;
+    const profile_name = location.state.profile_name;
+    const img_path = location.state.img_path;
     return (
         <div>
             <div className = "m1_bd m-[20px] p-0 block w-full min-h-[1000px] max-w-[1248px] mx-auto min-w-[740px]" style={{margin : 'auto'}}>
@@ -16,7 +18,7 @@ const WatchRecord = () => {
                         <div className = "flex justify-end relative text-lg mt-4 ml-14 w-[100%]">
                             <div className = "text-black">보고있는 콘텐츠</div>
                             <div className = "ml-3 mr-3">|</div>
-                            <Link to="/my/evaluationContent" state={{ profile_id: profile_id}}><div className = "text-black">평가</div></Link>
+                            <Link to="/my/evaluationContent" state={{ profile_id: profile_id, profile_name : profile_name ,img_path : img_path}}><div className = "text-black">평가</div></Link>
                         </div>
                         <img className = "rounded w-[50px] h-[50px] ml-10" src = "https://occ-0-2219-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABQraYEep-xEIjH8un2d94vqdnSOy6XOgdstZB4LNWxH02R2Lr61kagmfitUGDi9oBzVvLrMd23CUeWAi1b0VTiprSmqigKI.png?r=229"></img>
                     </div>

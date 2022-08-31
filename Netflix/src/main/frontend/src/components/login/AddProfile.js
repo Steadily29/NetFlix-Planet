@@ -80,7 +80,7 @@ const AddProfile = () => {
                 <div>
                     <h2 className='text-white'>프로필에 사용할 이미지를 클릭하세요</h2>
                 </div>
-                    <ul className='className="display: flex justify-center"'>
+                    <ul className='className="display: flex justify-center" overflow-x-scroll'>
                         {
                             imgSrc.map((item, index)=>
                                     <li>

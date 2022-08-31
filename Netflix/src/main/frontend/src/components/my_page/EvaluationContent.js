@@ -7,6 +7,10 @@ const EvaluationContent = () => {
 
     const location = useLocation();
     const profile_id = location.state.profile_id;
+    const profile_name = location.state.profile_name;
+    const img_path = location.state.img_path;
+    console.log(img_path)
+    console.log(profile_name)
 
     const qs =require('qs')
     const [data, setData] = useState([]);
@@ -35,13 +39,13 @@ const EvaluationContent = () => {
             <div className = "m1_bd m-[20px] p-0 block w-full min-h-[1000px] max-w-[1248px] mx-auto min-w-[740px]" style={{margin : 'auto'}}>
                 <div className = "px-[5%] min-h-[400px] min-w-[400px] m-auto block relative w-[100%]">
                     <div className = "flex justify-start w-[100%]">
-                        <div className = "text-[#333] text-4xl mb-100 mt-2 relative w-[70%]">정수 프로필의 컨텐츠 평가</div>
+                        <div className = "text-[#333] text-4xl mb-100 mt-2 relative w-[70%]">{profile_name}의 컨텐츠 평가</div>
                         <div className = "flex justify-end relative text-lg mt-4 ml-14 w-[100%]">
-                            <Link to="/my/watchRecord" state={{ profile_id: profile_id}}><div  className = "text-black">보고있는 콘텐츠</div></Link>
+                            <Link to="/my/watchRecord" state={{ profile_id: profile_id ,profile_name : profile_name ,img_path : img_path}}><div  className = "text-black">보고있는 콘텐츠</div></Link>
                             <div className = "ml-3 mr-3">|</div>
                             <div  className = "text-black">평가</div>
                         </div>
-                        <img className = "rounded w-[50px] h-[50px] ml-10" src = "https://occ-0-2219-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABQraYEep-xEIjH8un2d94vqdnSOy6XOgdstZB4LNWxH02R2Lr61kagmfitUGDi9oBzVvLrMd23CUeWAi1b0VTiprSmqigKI.png?r=229"></img>
+                        <img className = "rounded w-[50px] h-[50px] ml-10" src = {img_path}></img>
                     </div>
                     {
                         data.map((item, index)=>{return <ContentItem key={index} profile_id={profile_id} type={item.video_type} l_type={item.like_type} item={item.video_id} date={item.like_time} /> })

@@ -91,7 +91,7 @@ const UpdateProfile = () => {
                         <input type="hidden" value={item.profile_id}></input>
                         <div className="text-center" onClick={selectProfile}>
                             <img src={item.img_path} className="w-[150px] h-[150px]"></img>
-                            <div className="m-[20px]">
+                            <div className="m-[20px] text-white font-semibold">
                                 <span >{item.profile_name}</span>
 
                             </div>

@@ -17,6 +17,7 @@ const FindUser = () => {
     const [findUserList,setFindUserList] = useState([]);
     const findMenuBtn=()=>{
         setIsFindMenu(!isFindMenu);
+        setFindUserList([]);
     }
     const phoneChangeInput=(e)=>{
         setPhoneInputVal(e.target.value);
@@ -37,6 +38,7 @@ const FindUser = () => {
     const phoneChangeCode=(e)=>{
         setPhoneCode(e.target.value);
         document.getElementById('PhoneCodeResultDiv').innerHTML=''
+        setFindUserList([]);
     }
     const emailInput=(e)=>{
         setEmailInputVal(e.target.value);
@@ -177,9 +179,9 @@ const FindUser = () => {
                         findUserList.map((item,index)=>{ 
                             return (
                                 <div>
-                                    <h1 className='text-white'>가입하신 아이디</h1>
+                                    <h1 id="findIdId"className='text-white'>가입하신 아이디</h1>
                                     <li>
-                                    <h1 className='text-white'>{item.user_email}</h1>
+                                    <h1 id="findEmailEmail" className='text-white'>{item.user_email}</h1>
                                     </li>
                                 </div>
                                 )
